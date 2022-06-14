@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "ts-node index.ts",
-    "build": "tsc",
-    "dev": "ts-node index.ts"
+    "start": "NODE_ENV=prod yarn build && node build/index.js",
+    "build": "tsc -p tsconfig.json",
+    "dev": "NODE_ENV=dev ts-node src/index.ts"
   },
   "dependencies": {
   },
