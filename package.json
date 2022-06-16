@@ -6,6 +6,14 @@
     "author": "Jitu Nayak",
     "license": "MIT",
     "private": false,
+    "scripts": {
+        "start": "NODE_ENV=prod node build/index.js",
+        "build": "tsc -p tsconfig.json",
+        "dev": "NODE_ENV=dev ts-node src/index.ts",
+        "format": "yarn prettier --write ./src",
+        "prepare": "husky install",
+        "lint": "eslint . --ext .ts"
+    },
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
@@ -16,14 +24,6 @@
             "eslint --fix",
             "git add"
         ]
-    },
-    "scripts": {
-        "start": "NODE_ENV=prod node build/index.js",
-        "build": "tsc -p tsconfig.json",
-        "dev": "NODE_ENV=dev ts-node src/index.ts",
-        "format": "yarn prettier --write ./src",
-        "prepare": "husky install",
-        "lint": "eslint . --ext .ts"
     },
     "dependencies": {},
     "devDependencies": {
