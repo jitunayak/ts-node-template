@@ -1,10 +1,10 @@
 import * as dotenv from 'dotenv'
 import { resolve } from 'path'
 
-const MISSING_ENV = 'Envrionemt is Missing'
+const MISSING_ENV = 'Envrionemt is not set for'
 
 const env = process.env.NODE_ENV
-if (env === undefined) throw new Error(MISSING_ENV)
+if (env === undefined) throw new Error(`${MISSING_ENV} NODE_ENV`)
 
 const path = configureEnvPath(env)
 dotenv.config({ path: path })
@@ -36,6 +36,6 @@ function configureEnvPath(env: string): string | undefined {
 function validateEnvironment() {
     Object.entries(CONFIG).map((key) => {
         if (key[1] === undefined || key[1] === null)
-            throw new Error(`${key[0]} : MISSING_ENV`) // throw error if any enviroment values are missing
+            throw new Error(`${MISSING_ENV} ${key[0]}`) // throw error if any enviroment values are missing
     })
 }
