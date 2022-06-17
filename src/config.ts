@@ -23,7 +23,6 @@ function configureEnvPath(env: string): string | undefined {
                 __dirname,
                 `./../env/${process.env.NODE_ENV}.env`
             )
-            console.log(process.env.MONGO_URI)
             return path
         }
         case 'prod': {
