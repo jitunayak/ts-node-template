@@ -1,4 +1,3 @@
-import { CONFIG, loadConfiguration } from './config'
+import { CONFIG } from './config'
 
-loadConfiguration()
-console.log('Running Envrionemt:', CONFIG.ENV)
+console.log('Running Envrionemt:', CONFIG.ENV, CONFIG.MONGO_URI)
